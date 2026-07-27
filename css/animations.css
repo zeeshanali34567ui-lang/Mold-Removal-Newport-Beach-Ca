@@ -1,0 +1,277 @@
+/* ==========================================================
+   ANIMATIONS — Keyframes · Transitions · Micro-interactions
+   Brockton Mold Experts · Premium Design System
+   ========================================================== */
+
+/* --------------------------------------------------------
+   FLOATING DECORATIVE ANIMATION
+   -------------------------------------------------------- */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  33% {
+    transform: translateY(-12px) rotate(2deg);
+  }
+  66% {
+    transform: translateY(6px) rotate(-1deg);
+  }
+}
+
+@keyframes float-slow {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-20px) scale(1.02);
+  }
+}
+
+@keyframes float-reverse {
+  0%, 100% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(15px) translateX(-10px);
+  }
+}
+
+/* --------------------------------------------------------
+   PULSE / GLOW
+   -------------------------------------------------------- */
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(20, 184, 166, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px 8px rgba(20, 184, 166, 0.1);
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* --------------------------------------------------------
+   GRADIENT SHIMMER — Hero background
+   -------------------------------------------------------- */
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* --------------------------------------------------------
+   FADE / SLIDE ENTRANCE
+   -------------------------------------------------------- */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* --------------------------------------------------------
+   SCALE
+   -------------------------------------------------------- */
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* --------------------------------------------------------
+   SPIN — Loading
+   -------------------------------------------------------- */
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* --------------------------------------------------------
+   DRAW LINE — Timeline connector
+   -------------------------------------------------------- */
+
+@keyframes drawLine {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* --------------------------------------------------------
+   ANIMATION UTILITY CLASSES
+   -------------------------------------------------------- */
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-float-slow {
+  animation: float-slow 8s ease-in-out infinite;
+}
+
+.animate-float-reverse {
+  animation: float-reverse 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* --------------------------------------------------------
+   HOVER MICRO-INTERACTIONS
+   -------------------------------------------------------- */
+
+/* Image zoom on hover */
+.hover-zoom {
+  overflow: hidden;
+  border-radius: var(--radius-2xl);
+}
+
+.hover-zoom img {
+  transition: transform var(--duration-slow) var(--ease-smooth);
+}
+
+.hover-zoom:hover img {
+  transform: scale(1.05);
+}
+
+/* Card lift */
+.hover-lift {
+  transition: all var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Subtle border glow */
+.hover-glow {
+  transition: all var(--transition-base);
+}
+
+.hover-glow:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-glow);
+}
+
+/* Arrow slide on hover */
+.hover-arrow i.arrow-icon {
+  transition: transform var(--transition-base);
+}
+
+.hover-arrow:hover i.arrow-icon {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------
+   STAGGER DELAYS — For grid items
+   -------------------------------------------------------- */
+
+[data-aos][data-aos-delay="100"] { transition-delay: 100ms; }
+[data-aos][data-aos-delay="200"] { transition-delay: 200ms; }
+[data-aos][data-aos-delay="300"] { transition-delay: 300ms; }
+[data-aos][data-aos-delay="400"] { transition-delay: 400ms; }
+[data-aos][data-aos-delay="500"] { transition-delay: 500ms; }
+
+/* --------------------------------------------------------
+   REDUCED MOTION — Accessibility
+   -------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-float-reverse,
+  .animate-pulse-glow,
+  .animate-gradient {
+    animation: none;
+  }
+
+  [data-aos] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+.hover-lift-glow { transition: var(--transition-spring); }
+.hover-lift-glow:hover { transform: translateY(-8px); box-shadow: var(--shadow-glow-lg); }
+.stagger-1 { animation-delay: 100ms !important; }
+.stagger-2 { animation-delay: 200ms !important; }
+.stagger-3 { animation-delay: 300ms !important; }
+.stagger-4 { animation-delay: 400ms !important; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.nav__mobile-links li { opacity: 0; }

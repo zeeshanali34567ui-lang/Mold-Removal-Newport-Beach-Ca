@@ -1,0 +1,289 @@
+/* ==========================================================
+   SERVICES — Page-Specific Styles (Shared + Individual)
+   Brockton Mold Experts
+   ========================================================== */
+
+/* ============================================================
+   SERVICES LISTING PAGE
+   ============================================================ */
+
+.services-hero-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-8);
+}
+
+.services-hero-card {
+  position: relative;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+
+.services-hero-card:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-xl);
+  transform: translateY(-6px);
+  color: inherit;
+}
+
+.services-hero-card__image {
+  height: 260px;
+  overflow: hidden;
+}
+
+.services-hero-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--duration-slow) var(--ease-smooth);
+}
+
+.services-hero-card:hover .services-hero-card__image img {
+  transform: scale(1.05);
+}
+
+.services-hero-card__body {
+  padding: var(--space-8);
+}
+
+.services-hero-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  background: rgba(15, 118, 110, 0.07);
+  border-radius: var(--radius-xl);
+  color: var(--color-primary);
+  margin-bottom: var(--space-5);
+  transition: all var(--transition-base);
+}
+
+.services-hero-card:hover .services-hero-card__icon {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.services-hero-card__icon i {
+  width: 24px;
+  height: 24px;
+}
+
+.services-hero-card h3 {
+  font-size: var(--text-xl);
+  margin-bottom: var(--space-3);
+}
+
+.services-hero-card p {
+  font-size: var(--text-sm);
+  color: var(--color-body-light);
+  margin-bottom: var(--space-5);
+  max-width: 100%;
+}
+
+.services-hero-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  color: var(--color-primary);
+}
+
+.services-hero-card__link i {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--transition-base);
+}
+
+.services-hero-card:hover .services-hero-card__link i {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   INDIVIDUAL SERVICE PAGE
+   ============================================================ */
+
+/* Signs list */
+.signs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.sign-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
+  transition: all var(--transition-fast);
+}
+
+.sign-item:hover {
+  border-color: var(--color-border-accent);
+}
+
+.sign-item i {
+  width: 20px;
+  height: 20px;
+  color: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* Service process — vertical */
+.service-process {
+  position: relative;
+  max-width: 700px;
+}
+
+.service-process::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 27px;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-border);
+}
+
+.service-process-step {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  padding-bottom: var(--space-10);
+}
+
+.service-process-step:last-child {
+  padding-bottom: 0;
+}
+
+.service-process-step__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background: var(--color-bg-card);
+  border: 2px solid var(--color-primary);
+  border-radius: var(--radius-full);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  flex-shrink: 0;
+  z-index: 1;
+  transition: all var(--transition-base);
+}
+
+.service-process-step:hover .service-process-step__number {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.service-process-step__content h4 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+  padding-top: var(--space-1);
+}
+
+.service-process-step__content p {
+  font-size: var(--text-sm);
+  color: var(--color-body-light);
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Related services */
+.related-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.related-card {
+  display: block;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-8);
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  transition: all var(--transition-base);
+}
+
+.related-card:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  color: inherit;
+}
+
+.related-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  margin: 0 auto var(--space-5);
+  background: rgba(15, 118, 110, 0.07);
+  border-radius: var(--radius-xl);
+  color: var(--color-primary);
+  transition: all var(--transition-base);
+}
+
+.related-card:hover .related-card__icon {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+}
+
+.related-card__icon i {
+  width: 26px;
+  height: 26px;
+}
+
+.related-card h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-2);
+}
+
+.related-card p {
+  font-size: var(--text-sm);
+  color: var(--color-body-light);
+  max-width: 100%;
+  margin: 0;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .signs-grid {
+    grid-template-columns: 1fr;
+  }
+  .related-grid {
+    grid-template-columns: 1fr;
+  }
+  .services-hero-card__image {
+    height: 200px;
+  }
+}

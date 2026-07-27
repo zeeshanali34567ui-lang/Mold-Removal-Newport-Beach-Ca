@@ -1,0 +1,229 @@
+/* ==========================================================
+   CONTACT PAGE — Page-Specific Styles
+   Brockton Mold Experts
+   ========================================================== */
+
+/* Contact layout */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-12);
+  align-items: start;
+}
+
+/* Form card */
+.contact-form-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10);
+}
+
+.contact-form-card h2 {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-2);
+}
+
+.contact-form-card > p {
+  color: var(--color-body-light);
+  margin-bottom: var(--space-8);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-6);
+}
+
+/* Info sidebar */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.contact-info-card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.contact-info-card:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-info-card__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: rgba(15, 118, 110, 0.07);
+  border-radius: var(--radius-lg);
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+
+.contact-info-card__icon i {
+  width: 22px;
+  height: 22px;
+}
+
+.contact-info-card h4 {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  margin-bottom: var(--space-1);
+}
+
+.contact-info-card p,
+.contact-info-card a {
+  font-size: var(--text-sm);
+  color: var(--color-body-light);
+  margin: 0;
+  max-width: 100%;
+}
+
+.contact-info-card a {
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.contact-info-card a:hover {
+  color: var(--color-primary);
+}
+
+/* Hours table */
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-2) 0 0;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--color-body-light);
+  padding: var(--space-1) 0;
+  margin: 0;
+}
+
+.hours-list li span:last-child {
+  font-weight: var(--weight-medium);
+  color: var(--color-body);
+}
+
+/* Expect cards */
+.expect-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.expect-card {
+  text-align: center;
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: var(--space-10) var(--space-6);
+  transition: all var(--transition-base);
+}
+
+.expect-card:hover {
+  border-color: var(--color-border-accent);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.expect-card__number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  margin: 0 auto var(--space-5);
+  font-family: var(--font-heading);
+  font-size: var(--text-lg);
+  font-weight: var(--weight-bold);
+  color: var(--color-primary);
+  background: rgba(15, 118, 110, 0.07);
+  border-radius: var(--radius-full);
+}
+
+.expect-card h3 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-3);
+}
+
+.expect-card p {
+  font-size: var(--text-sm);
+  color: var(--color-body-light);
+  max-width: 100%;
+  margin: 0;
+}
+
+/* Service area */
+.service-area {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.service-area h2 {
+  margin-bottom: var(--space-4);
+}
+
+.service-area p {
+  margin: 0 auto;
+}
+
+.area-tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+.area-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-primary);
+  background: rgba(15, 118, 110, 0.06);
+  border: 1px solid rgba(15, 118, 110, 0.12);
+  border-radius: var(--radius-full);
+}
+
+.area-tag i {
+  width: 14px;
+  height: 14px;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .expect-grid {
+    grid-template-columns: 1fr;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .contact-form-card {
+    padding: var(--space-6);
+  }
+}

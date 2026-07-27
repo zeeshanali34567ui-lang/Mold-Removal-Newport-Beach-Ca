@@ -1,0 +1,346 @@
+/* ==========================================================
+   BASE — Reset · Typography · Global Styles
+   Brockton Mold Experts · Premium Design System
+   ========================================================== */
+
+/* --------------------------------------------------------
+   MODERN RESET
+   -------------------------------------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  font-weight: var(--weight-normal);
+  line-height: var(--leading-relaxed);
+  color: var(--color-body);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+/* --------------------------------------------------------
+   SKIP TO CONTENT — Accessibility
+   -------------------------------------------------------- */
+
+.skip-to-content {
+  position: absolute;
+  top: -100%;
+  left: var(--space-4);
+  z-index: var(--z-max);
+  padding: var(--space-3) var(--space-6);
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+  transition: top var(--transition-fast);
+}
+
+.skip-to-content:focus {
+  top: 0;
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------
+   SELECTION
+   -------------------------------------------------------- */
+
+::selection {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+}
+
+::-moz-selection {
+  color: var(--color-on-primary);
+  background-color: var(--color-primary);
+}
+
+/* --------------------------------------------------------
+   FOCUS STATES — Accessibility
+   -------------------------------------------------------- */
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* --------------------------------------------------------
+   TYPOGRAPHY — Headings
+   -------------------------------------------------------- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-heading);
+  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-tight);
+  text-wrap: balance;
+}
+
+h1 {
+  font-size: var(--text-6xl);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-size: var(--text-4xl);
+  font-weight: var(--weight-bold);
+}
+
+h3 {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-semibold);
+}
+
+h4 {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-semibold);
+}
+
+h5 {
+  font-size: var(--text-lg);
+  font-weight: var(--weight-semibold);
+}
+
+h6 {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-wide);
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------
+   TYPOGRAPHY — Body
+   -------------------------------------------------------- */
+
+p {
+  max-width: var(--text-max);
+  margin-bottom: var(--space-4);
+  line-height: var(--leading-relaxed);
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+.lead {
+  font-size: var(--text-lg);
+  line-height: var(--leading-loose);
+  color: var(--color-body-light);
+}
+
+.small {
+  font-size: var(--text-sm);
+}
+
+.tiny {
+  font-size: var(--text-xs);
+  color: var(--color-body-light);
+}
+
+strong, b {
+  font-weight: var(--weight-semibold);
+  color: var(--color-heading);
+}
+
+em, i {
+  font-style: italic;
+}
+
+/* --------------------------------------------------------
+   TYPOGRAPHY — Labels & Eyebrows
+   -------------------------------------------------------- */
+
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  letter-spacing: var(--tracking-widest);
+  text-transform: uppercase;
+  color: var(--color-primary);
+  margin-bottom: var(--space-4);
+}
+
+.section-subtitle {
+  max-width: var(--text-max);
+  font-size: var(--text-lg);
+  line-height: var(--leading-relaxed);
+  color: var(--color-body-light);
+}
+
+/* --------------------------------------------------------
+   LINKS
+   -------------------------------------------------------- */
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent);
+}
+
+.link-underline {
+  position: relative;
+  display: inline-block;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: var(--radius-full);
+  transition: width var(--transition-base);
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}
+
+/* --------------------------------------------------------
+   LISTS
+   -------------------------------------------------------- */
+
+ul, ol {
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-4);
+}
+
+li {
+  margin-bottom: var(--space-2);
+  line-height: var(--leading-relaxed);
+}
+
+li:last-child {
+  margin-bottom: 0;
+}
+
+/* --------------------------------------------------------
+   IMAGES
+   -------------------------------------------------------- */
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+img[loading="lazy"] {
+  content-visibility: auto;
+}
+
+/* --------------------------------------------------------
+   HORIZONTAL RULES
+   -------------------------------------------------------- */
+
+hr {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-8) 0;
+}
+
+/* --------------------------------------------------------
+   FORMS — Global
+   -------------------------------------------------------- */
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* --------------------------------------------------------
+   UTILITY — Text Alignment
+   -------------------------------------------------------- */
+
+.text-center { text-align: center; }
+.text-left   { text-align: left; }
+.text-right  { text-align: right; }
+
+/* --------------------------------------------------------
+   UTILITY — Text Colors
+   -------------------------------------------------------- */
+
+.text-primary  { color: var(--color-primary); }
+.text-accent   { color: var(--color-accent); }
+.text-muted    { color: var(--color-body-light); }
+.text-white    { color: var(--color-on-dark); }
+.text-heading  { color: var(--color-heading); }
+
+/* --------------------------------------------------------
+   UTILITY — Display
+   -------------------------------------------------------- */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* --------------------------------------------------------
+   SCROLLBAR — Subtle custom scrollbar
+   -------------------------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-dark);
+  border-radius: var(--radius-full);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-body-lighter);
+}

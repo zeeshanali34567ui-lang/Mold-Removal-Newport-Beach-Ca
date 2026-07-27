@@ -1,0 +1,314 @@
+/* ==========================================================
+   LAYOUT — Containers · Sections · Grids · Splits
+   Brockton Mold Experts · Premium Design System
+   ========================================================== */
+
+/* --------------------------------------------------------
+   CONTAINER
+   -------------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--container-gutter);
+  padding-right: var(--container-gutter);
+}
+
+.container--narrow {
+  max-width: var(--container-narrow);
+}
+
+.container--text {
+  max-width: var(--text-max);
+}
+
+/* --------------------------------------------------------
+   SECTIONS
+   -------------------------------------------------------- */
+
+.section {
+  position: relative;
+  padding-top: var(--section-y);
+  padding-bottom: var(--section-y);
+}
+
+.section--lg {
+  padding-top: var(--section-y-lg);
+  padding-bottom: var(--section-y-lg);
+}
+
+.section--no-top {
+  padding-top: 0;
+}
+
+.section--no-bottom {
+  padding-bottom: 0;
+}
+
+/* Section backgrounds */
+.section--white {
+  background-color: var(--color-bg-card);
+}
+
+.section--muted {
+  background-color: var(--color-bg-muted);
+}
+
+.section--gradient {
+  background: var(--gradient-hero);
+}
+
+.section--dark {
+  background: var(--gradient-footer);
+  color: var(--color-on-dark);
+}
+
+.section--dark h2,
+.section--dark h3,
+.section--dark h4 {
+  color: var(--color-on-dark);
+}
+
+.section--dark p {
+  color: var(--color-on-dark-muted);
+}
+
+.section--dark .eyebrow {
+  color: var(--color-accent);
+}
+
+.section--cta {
+  background: var(--gradient-cta);
+  color: var(--color-on-dark);
+}
+
+.section--cta h2,
+.section--cta h3 {
+  color: var(--color-on-dark);
+}
+
+.section--cta p {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+/* --------------------------------------------------------
+   SECTION HEADER — Centered titles
+   -------------------------------------------------------- */
+
+.section-header {
+  text-align: center;
+  max-width: var(--text-max);
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: var(--space-16);
+}
+
+.section-header h2 {
+  margin-bottom: var(--space-4);
+}
+
+.section-header .section-subtitle {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --------------------------------------------------------
+   GRID SYSTEM
+   -------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.grid--2-3 {
+  grid-template-columns: 2fr 3fr;
+}
+
+.grid--3-2 {
+  grid-template-columns: 3fr 2fr;
+}
+
+.grid--gap-sm {
+  gap: var(--space-4);
+}
+
+.grid--gap-lg {
+  gap: var(--space-12);
+}
+
+.grid--gap-xl {
+  gap: var(--space-16);
+}
+
+/* --------------------------------------------------------
+   SPLIT LAYOUT — Two-column asymmetric
+   -------------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-16);
+  align-items: center;
+}
+
+.split--reverse {
+  direction: rtl;
+}
+
+.split--reverse > * {
+  direction: ltr;
+}
+
+.split--wide-left {
+  grid-template-columns: 55% 1fr;
+}
+
+.split--wide-right {
+  grid-template-columns: 1fr 55%;
+}
+
+.split__content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.split__media {
+  position: relative;
+}
+
+.split__media img {
+  width: 100%;
+  border-radius: var(--radius-2xl);
+  object-fit: cover;
+}
+
+/* --------------------------------------------------------
+   FLEX UTILITIES
+   -------------------------------------------------------- */
+
+.flex {
+  display: flex;
+}
+
+.flex--center {
+  align-items: center;
+  justify-content: center;
+}
+
+.flex--between {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex--col {
+  flex-direction: column;
+}
+
+.flex--gap-sm {
+  gap: var(--space-2);
+}
+
+.flex--gap-md {
+  gap: var(--space-4);
+}
+
+.flex--gap-lg {
+  gap: var(--space-8);
+}
+
+.flex--wrap {
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------
+   SVG WAVE DIVIDERS
+   -------------------------------------------------------- */
+
+.wave-divider {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  pointer-events: none;
+}
+
+.wave-divider--top {
+  top: -1px;
+}
+
+.wave-divider--bottom {
+  bottom: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* --------------------------------------------------------
+   DECORATIVE ELEMENTS
+   -------------------------------------------------------- */
+
+.decorative-dot {
+  position: absolute;
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  z-index: var(--z-below);
+}
+
+.decorative-ring {
+  position: absolute;
+  border-radius: var(--radius-full);
+  border: 2px solid rgba(20, 184, 166, 0.15);
+  pointer-events: none;
+  z-index: var(--z-below);
+}
+
+/* --------------------------------------------------------
+   SPACING UTILITIES
+   -------------------------------------------------------- */
+
+.mt-auto { margin-top: auto; }
+.mb-0    { margin-bottom: 0; }
+.mb-4    { margin-bottom: var(--space-4); }
+.mb-6    { margin-bottom: var(--space-6); }
+.mb-8    { margin-bottom: var(--space-8); }
+.mb-12   { margin-bottom: var(--space-12); }
+.mb-16   { margin-bottom: var(--space-16); }
+
+.mx-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Utilities */
+.w-full { width: 100%; }
+.text-accent { color: var(--color-accent); }
+.mt-4 { margin-top: var(--space-4); }
+.page-hero--legal { padding-top: var(--space-20); padding-bottom: var(--space-12); }
+
+/* Overlapping & Offsets */
+.offset-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: var(--space-8); align-items: flex-start; }
+@media (min-width: 768px) { .offset-grid > *:nth-child(even) { transform: translateY(var(--space-10)); } }
+.overlap-section-top { margin-top: calc(-1 * var(--space-20)); position: relative; z-index: 10; }
+.section-divider-curve { position: absolute; bottom: 0; left: 0; width: 100%; overflow: hidden; line-height: 0; transform: rotate(180deg); }
+.section-divider-curve svg { position: relative; display: block; width: calc(100% + 1.3px); height: 50px; }
+.section-divider-curve .shape-fill { fill: var(--color-bg); }
